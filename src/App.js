@@ -9,6 +9,12 @@ import './style.css'
 
 export default function App() {
   const [notes, setNotes] = React.useState(() => JSON.parse(localStorage.getItem('notes')) || [])
+  const defaultNote = {
+    id: nanoid(),
+    body: `# Hey! Welcome to the Markdown Notes App\nThis is a Notes App/Markdown Editor and it's [open source](https://github.com/redotomi/markdown-notes-app)!\n## How to use this app?\nIt's very simple! you can create new notes with the **+** button, you can delete notes with the **Trash Can** button, and you can write and edit notes in the **Write Tab**!\n## Don't know what Markdown is?\nCheck the [Markdown Guide Site](https://www.markdownguide.org/getting-started/), it's very easy and you can use the icons in the top to make it easier ;)`
+  }
+
+  const [notes, setNotes] = React.useState(() => JSON.parse(localStorage.getItem('notes')) || [defaultNote])
   const [currentNoteId, setCurrentNoteId] = React.useState(
     (notes[0] && notes[0].id) || ""
   )
