@@ -5,7 +5,7 @@ import '../style.css'
 
 
 export default function Editor({ currentNote, updateNote }) {
-  const [selectedTab, setSelectedTab] = React.useState("preview")
+  const [selectedTab, setSelectedTab] = React.useState("write")
 
   const converter = new Showdown.Converter({
     tables: true,
